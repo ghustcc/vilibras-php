@@ -16,6 +16,14 @@
             <div class="avatar"></div>
             <h1>Faça o seu login</h1>
             <img src="../../../public/images/Logo.png" id="foto" alt="">
+
+            <?php
+            if (isset($_GET['msg']) && !empty($_GET['msg'])) {
+                $mensagem = htmlspecialchars($_GET['msg']);
+                echo "<div class='mensagem-erro'>{$mensagem}</div>";
+            }
+            ?>
+
             <form id="forms" method="POST" action="../../actions/usuario/loginUsuario.php">
                 <input type="email" name="email" placeholder="E-mail" required>
                 <input type="password" name="senha" placeholder="Senha" required>

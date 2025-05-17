@@ -20,9 +20,7 @@ require_once("../base/popups/popup.php");
     
     <title>VILIBRAS</title>
     <link rel="stylesheet" href="../../../public/css/aula-style.css">
-
     <link rel="stylesheet" href="../../../public/css/aula-portrait-style.css" media="screen and (orientation: portrait)">
-
     <link rel="stylesheet" href="../../../public/css/aula-landscape-style.css" media="screen and (orientation: landscape)">
 
 

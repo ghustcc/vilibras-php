@@ -7,7 +7,7 @@ $msg;
 
 # verifica de as variaveis foram definidas ou se estão vazias
 if(empty($_POST['email'])){
-    $msg = "Presencha o email";
+    $msg = "Preencha o email";
 }
 elseif(empty($_POST['senha'])){
     $msg = "Preencha a senha";
@@ -45,7 +45,7 @@ elseif(empty($_POST['senha'])){
             header("Location: ../../pages/dashboard/dashboard.php");
             exit();
         } else {
-            $msg = 'Senha incorreta!';
+            $msg = 'Senha incorreta! Tente novamente.';
         }
 
     } else {

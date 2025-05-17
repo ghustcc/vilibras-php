@@ -1,319 +1,149 @@
-@charset "UTF-8";
-
-*{
-  margin: 0;
-  padding: 0;
-}
-
-
-:root{
-  --cor:#007bff;
-  --cor2:#f0f0f0;
-  --cor3:#0056b3;
-  --cor4:#0c4786;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-  animation: blendmode 15s ease-in-out infinite; 
-
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--cor); 
-  border-radius: 6px;
-  animation: blendmode 15s ease-in-out infinite; 
-
-}
-
-::-webkit-scrollbar-track {
-  background: var(--cor2);
-  animation: blendmode 15s ease-in-out infinite; 
-
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--cor3);
-  animation: blendmode 15s ease-in-out infinite; 
-
-}
-
-body{
+body {
     margin: 0;
     padding: 0;
+    background-color: #3498dbc4;
+    background-image: url('../images/uyfydu6.jpg');
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .container {
+    color: #fff;
+    transition: 0.7s ease-in-out;
+    animation: blendmode 15s ease-in-out infinite alternate;
+}
+
+.background-image {
     display: flex;
-    flex-wrap: wrap;
-    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-  }
-  
-  #left-professor{
-    background: url('../IMG/Wavy Elegant Lines Navy Background.jpg');
-    flex: 2;
-    background-color: #404040;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+.login-container {
     position: relative;
-    color: white;
-    padding: 40px;
-    box-shadow: 3px -1px 9px 0px #e0e1e366;
-    z-index: 2;
-    border-radius: 0px 100px 100px 0px;
+    text-align: center;
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, 0.547);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px 5px #0000004b;
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
     overflow: hidden;
-    background-blend-mode: luminosity;
 
-    animation: blendmode 15s ease-in-out infinite; 
-    
-  }
-
-  #left-aluno {
-    flex: 2;
-    background-color: #404040;
-    /* background: linear-gradient(120deg,var(--cor4),var(--cor)); */
-    background: url('../IMG/69603047_uyfydu4.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: white;
-    padding: 40px;
-    box-shadow: 3px -1px 9px 0px #20446b66;
-    z-index: 2;
-    border-radius: 0px 100px 100px 0px;
-    overflow: hidden;
-    background-blend-mode: darken;
-
-    animation: blendmode 15s ease-in-out infinite; 
-    
-  }
-
-  .intro{
-    min-height: 85vh;
-  }
-
-  .intro h1, .intro p{
-    opacity: 0;
-    animation: fadeIn 2.5s ease-in-out forwards;
-  }
-
-  p.welcome-message{
-    text-shadow: 2px 1px 4px #ffffff5e;
-  }
-
-  .left-section h1{
-    text-shadow: 2px 1px 14px #ffffff5e;
-    
-  }
+}
 
 #foto{
+    max-width: 20vw;
     position: absolute;
-    top: -5%;
-    right: 4%;
-    width: 40%;
-    height: 40%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: drop-shadow(0px 10px 12px black);
-    opacity: 0.7;
+    top:50px;
     object-fit:scale-down;
+    transform: scale(0.5) rotate(0deg); 
+    transition: transform 3s ease-in-out; 
     z-index: -1;
-  }
-  .logo {
-    width: 200px;
-    height: 167px;
-    transition: transform 2s, width 2s, height 2s;
-}
-.logo2{
-  transition: transform 2s, width 2s, height 2s;
-
+    opacity: 0.6;
 }
 
-  nav{
-    position: absolute;
-    bottom: 5%;
-    right: 0%;
-    width: 100%;
-    background:var(--cor4);
 
-  }
-  
-  nav a{
-    color:black;
-    text-decoration: none;
-    padding: 13px;
-    background-color: white;
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    width: 47%;
-  }
-
-  button a {
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  p#frase{
-    font-size: 22px;
-  }
-
-  p#frase strong, strong{
-    border-radius: 15px;
-    padding: 2px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  .wave-pattern {
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    background-image: url('../images/Logo.png');
+    background-blend-mode: multiply;
     background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px;
-  }
-  
-  .welcome-message {
-    font-size: 24px;
-  }
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 0 auto;
+}
 
-  .area-professor{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px;
-    margin: 0px;
-    animation: fadeIn 3s ease-in-out forwards;
-  }
-
-  .area-professor button{
-    background-color:var(--cor4);
-    border-radius: 0%;
-    font-size: 16px;
-    color: white;
-  }
-
-  .area-professor button:hover{
-    border-radius: 20px;
-    transition: 0.7s;
-  }
-  .right-section {
-    flex: 1;
-    padding: 40px;
-    opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
-  }
-
-  .mobile{
-    display: none;
-  }
-  footer{
-    display: none;
-  }
-  .right-section h1{
+h1 {
     font-family: monospace;
     border-right: 4px solid;
-    width: 14ch;
+    width: 19ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(14), blinking 0.5s infinite step-end alternate;
-  }
-  
-  form {
+    animation: typing 3s steps(16), blinking 1s infinite step-end alternate;
+    margin: 10px auto;
+}
+
+form {
     display: flex;
     flex-direction: column;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+label{
+    margin: 10px 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
+input {
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    background-color: var(--cor);
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    outline: 0;
+}
+
+select{
+    text-align: center;
+    color: gray;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#buttonDiv{
+    padding: 10px;
+    max-width: 300px;
+    margin: 0 auto
+
+}
+.links {
+
+    margin-top: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.mensagem-erro {
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 1px solid red;
     color: white;
     padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
-  }
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-  button:hover{
-    opacity: 0.5;
-    transition: .7s;
-  }
-  
-  label {
-    margin-top: 10px;
-    font-size: 14px;
-    padding: 10px;
 
-  }
-  
-  p {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  a {
-    color: var(--cor);
-  }
-
-  select{
-    width: 100%;
-    padding: 10px;
-  }
-
-  #nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  #btnMostrarPopup, #btnMostrarPopup2, #btnMostrarPopup3 {
-    display: none; 
-    border-radius: 0px;
-  }
-  
-  #btnFecharPopup{
-    display: none;
-  }
-  
-  #etapa2{
-    display: none;
-  }
-  
-  #proximo2{
-    background-color: var(--cor);
-  }
-
-  footer{
-    display: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    align-items: center;
-    justify-content: center;
-
-  }
-  footer h3{
-    margin: 10px;
-  }
-
-  footer h3 a{
-    text-decoration: none;
-    font-style: italic;
-    color: gray;
-    opacity: 0.7;
-  }
-
-  @keyframes typing{
+@keyframes typing{
     from{
       width: 0;
     }
@@ -334,142 +164,32 @@ body{
   }
   }
 
-.fade-in-effect {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-}
 
-
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
-}
-
-@keyframes blendmode {
-  0% {
-      background-color: #404040;
-  }
-  50% {
-      background-color: #007bff; 
-  }
-  100% {
-      background-color: #404040; 
-  }
-}
- 
-
-@media screen and (max-width:768px){
-  #aluno{
-    height: 100%;
-    background: url('../IMG/69603047_uyfydu4.jpg');
-    background-blend-mode: hard-light;
-    animation: blendmode 15s ease-in-out infinite;
-    background-size: cover;
-    background-position: center;
+  @keyframes blendmode {
+    0% {
+        background-color: #404040;
+    }
+    50% {
+        background-color: #007bff; 
+    }
+    100% {
+        background-color: #404040; 
+    }
   }
 
-  #professor{
-    height: 100%;
-    background: url('../IMG/Wavy\ Elegant\ Lines\ Navy\ Background.jpg');
-    background-blend-mode: luminosity;
-    animation: blendmode 15s ease-in-out infinite alternate;
-    background-size: cover;
-    background-position: center;
-  }
+@media screen and (max-width:720px){
+    .login-container{
+        height: 100vh;
+        width: 100vw;
 
-
-  .logo{
-    display: block;
-  }
-  .right-section{
-    min-height: 100vh;
-  }
-  .mobile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-
-  }
-  #h2-mobile{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    margin: 10px;
-  }
-
-  footer{
-    display: flex;
-  }
-
-
-  .logo_right-section{
-    position: relative;
-    height: 40%;
-    top: 5%;
-    background-image: url(../IMG/Logo\ VILIBRAS.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  #btnMostrarPopup, #btnMostrarPopup2, #btnMostrarPopup3 {
-    display: block;
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  #btnMostrarPopup2{
-    background: white;
-    border: 1px solid var(--cor3);
-    color: var(--cor3);
-  }
-
-  #btnMostrarPopup3{
-    border: 1px solid var(--cor3);
-    color: white;
-    background-color: transparent;
-  }
-  .etapas{
-    margin: 30px;
-  }
-  .etapa {
-    display: none;
-  }
-
-  #etapa1 {
-    display: block;
-  }
-  .popup {
-    display: none;
-    width: 90%;
-    height: 100%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px inset var(--cor);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  #foto2{
-    width: 80px;
-    padding: 40px;
-    filter: drop-shadow(0px 10px 12px black);
-    opacity: 0.7;
-    z-index: -1;
-  }
-
-  form{
-    overflow: hidden;
-  }
-  .left-section{
-    display: none;
-  }
-
+    }
+    .avatar{
+        margin-top: 30px;
+    }
+    #foto{
+        display:none
+    }
+    .links{
+        font-size: 11px;
+    }
 }

@@ -1,97 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../public/css/cadastro-basic.css">
-    <link rel="stylesheet" href="../../../public/css/cadastro-portrait.css" media="screen and (orientation: portrait)">
-    <link rel="stylesheet" href="../../../public/css/cadastro-landscape.css" media="screen and (orientation: landscape)">
     <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
-
-    <title>VILIBRAS</title>
+    <link rel="stylesheet" href="../../../public/css/cadastro.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="../../../public/js/login.js"></script>
+    <title>Cadastro | VILIBRAS</title>
 </head>
 <body>
-    <div class="site-content">
-        <video autoplay muted loop id="heroVideo">
-            <source src="../../../public/images/background-cadastro.mp4" type="video/mp4">
-        </video>
-    </div>
+    <div class="background-image" id="background-image">
+        <div class="login-container" id="login-container">
+            <div class="avatar"></div>
+            <h1>Faça o seu cadastro</h1>
+            <img src="../../../public/images/Logo.png" id="foto" alt="">
 
-    <div class="container">
-        <div class="nav">
-            <div class="logo">
-                <a href="#">vilibras</a>
-                <img id="logo-vilibras" src="../../../public/images/Logo.png" alt="" srcset="">
-            </div>
+            <?php
+            if (isset($_GET['msg']) && !empty($_GET['msg'])) {
+                $mensagem = htmlspecialchars($_GET['msg']);
+                echo "<div class='mensagem-erro'>{$mensagem}</div>";
+            }
+            ?>
+
+            <form id="forms" method="POST" action="../../actions/usuario/cadastroUsuario.php">
+
+                <input type="text" id="nome" name="nome"  placeholder="Nome" required tabindex="1" data-link="nome">
+                <input type="email" name="email" placeholder="Email"  required tabindex="2" data-link="email">
+                <input type="password" name="senha" placeholder="Senha"  required tabindex="3" data-link="senha">
+                <button id="submit" type="submit"><a href="../dashboard/dashboard.php">Entrar</a></button>
+                <div id="buttonDiv"></div>
+                
+            </form>
+
             <div class="links">
-                <a id="login-a" href="login.php"><img src="../../../public/images/enter_1828395.png" alt="Ícone de Pixel perfect" data-link="login" tabindex="5"></a>
+                <a href="../landingpage/landingpage.php">Página inicial</a>
+                <a href="#">|</a>
+                <a href="login.php">Fazer login</a>
             </div>
-        </div>
 
-        <div class="hero-copy">
-            <h1>vilibras</h1>
-            <p>cadastro</p>
-
-            <div class="forms">
-                <form method="POST" action="../../actions/usuario/cadastroUsuario.php">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome"  placeholder="Nome:" required tabindex="1" data-link="nome">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Email"  required tabindex="2" data-link="email">
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" placeholder="Senha"  required tabindex="3" data-link="senha">
-                    <button type="submit" tabindex="4" >Cadastrar</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer">
-            <div class="links">
-                <a id="help-btn" href="#">
-                    <img id="help-a" src="../../../public/images/help-web-button_18436.png" alt="">
-                    <span id="help-text">Ajuda</span>
-                </a>
-                  
-                <a id="vilibras-a-c" href="#">VILIBRAS</a>
-
-            </div>
         </div>
     </div>
-    <canvas id="draw"></canvas>
-
-    <div id="popup" class="popup">
-        <img id="assistent-img" src="../../../public/images/customer_6842168.png" alt="">
-        Posso ajudar com alguma coisa?
-        <button id="close-popup" class="close-popup">X</button>
-    </div>
-
-    <div id="menuPopup" class="popup">
-        <img src="../../../public/images/customer_6842168.png" alt="">
-        <ul>
-            <li data-link="nome"><a href="#">Nome</a></li>
-            <li data-link="#"><a href="#">E-mail</a></li>
-            <li data-link="#"><a href="#">Senha</a></li>
-            <li data-link="#"><a href="login.php">Fazer Login</a></li>
-        </ul>
-    </div>
-
-    <div id="sidebar" class="sidebar">
-        <div class="sidebar-container">
-            <button class="close-sidebar" onclick="toggleSidebar()">Fechar</button>
-            <div id="sidebar-hero">
-                <img id="assistent-bar-img" src="../../../public/images/customer_6842168.png" alt="">
-                <h2>Você precisa de ajuda?</h2>
-            </div>
-            <div id="sidebar-info">
-                <p id="text-sidebar">Utilize as teclas do teclado para te ajudar!</p>
-                <p id="text-sidebar2">Utilize o <span>TAB ou SHIFT + TAB</span> para navegar no formulário.</p>
-                <p id="text-sidebar-portrait">Toque e segure em qualquer canto da página para ativar o <span>menú flutuante !</span></p>
-                <img id="keyboard-gif" src="../../../public/images/animated-keyboard.gif" alt="">
-                <img id="screen-gif" src="../../../public/images/animate-screen-phone.gif" alt="">
-
-            </div>
-        </div>
-    </div>
-    <script src="../../../public/js/cadastro.js"></script>
 </body>
 </html>
